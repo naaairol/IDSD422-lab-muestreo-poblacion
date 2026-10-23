@@ -48,7 +48,7 @@ print()
 #         Pista: .head(20) — igual que la demo de clase.
 #         Después de correrlo, mira la composición por ciudad que imprime el
 #         reporte: ¿es un corte al azar? ¿alguna ciudad falta por completo?
-muestra_conv = None
+muestra_conv = poblacion.head(20)
 
 # ---------------------------------------------------------------------------
 # 3. Muestra aleatoria simple: el sorteo de 20
@@ -58,7 +58,8 @@ muestra_conv = None
 #         reproducible; sin él cambia en cada ejecución.
 # TODO 3: repite el sorteo con las semillas 2 a 5 y anota las 5 medias en el
 #         informe: la variabilidad de la estimación es parte de la lección.
-muestra_aas = None
+#Semilla 1
+muestra_aas = poblacion.sample(20, random_state=1)
 
 # ---------------------------------------------------------------------------
 # 4. Muestra estratificada: 5 % dentro de cada ciudad
@@ -68,13 +69,32 @@ muestra_aas = None
 #         Cuenca (20 en total).
 #         Pista: .groupby("ciudad") y .sample(frac=0.05, random_state=1).
 #         ¿Qué garantiza este diseño que el sorteo simple no garantiza?
-muestra_est = None
+muestra_est = poblacion.groupby("ciudad").sample(frac=0.05, random_state=1)
 
 # ---------------------------------------------------------------------------
 # 5. Comparación final
 # ---------------------------------------------------------------------------
 reporte("Conveniencia", muestra_conv, parametro)
-reporte("Aleatorio simple", muestra_aas, parametro)
+
+#Semilla 1
+reporte("Aleatorio simple (seed = 1)", muestra_aas, parametro)
+
+#Semilla 2
+muestra_aas_s2 = poblacion.sample(20, random_state=2)
+reporte("Aleatorio simple (seed = 2)", muestra_aas_s2, parametro)
+
+#Semilla 3
+muestra_aas_s3 = poblacion.sample(20, random_state=3)
+reporte("Aleatorio simple (seed = 3)", muestra_aas_s3, parametro)
+
+#Semilla 4
+muestra_aas_s4 = poblacion.sample(20, random_state=4)
+reporte("Aleatorio simple (seed = 4)", muestra_aas_s4, parametro)
+
+#Semilla 5
+muestra_aas_s5 = poblacion.sample(20, random_state=5)
+reporte("Aleatorio simple (seed = 5)", muestra_aas_s5, parametro)
+
 reporte("Estratificado", muestra_est, parametro)
 print()
 
