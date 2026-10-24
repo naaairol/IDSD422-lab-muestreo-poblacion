@@ -23,7 +23,7 @@ Comprobé cada una de las variables registradas en la base de fidelización, ade
 | `ingresos_mensuales` | numérica continua | Es posible indicarlo con decimales y así se hace | int64 |
 | `satisfaccion` | categorica ordinal | Mide percepción mediante una escala numérica | int64 |
 
-Como en la columna 'satisfacion' solo se manejan números, era obvio obtener int64 tras aplicar dtype, sin embargo, esto no basta para clasificarlo pues ignora el significado real de la columna. Esto se lo puede ver al asignar una 'etiqueta' a cada número. Sigue expresando la satisfacción del cliente, pero no es operable; no puedo decir que 2 ('insatisfecho'), sea el doble de 4 ('satisfecho').
+Como en la columna 'satisfacion' solo se manejan números, era obvio obtener int64 tras aplicar dtype, sin embargo, esto no basta para clasificarlo pues ignora el significado real de la columna. Esto se lo puede ver al asignar una 'etiqueta' a cada número. Sigue expresando la satisfacción del cliente, pero no es operable; no puedo decir que 2 ('insatisfecho'), sea la mitad de 4 ('satisfecho').
 
 Por otro lado, si el orden no es declarado en una columna que mantiene datos categóricos ordinales, el análisis se vuelve impreciso. Al quererlas ordenar, sucedería de forma alfabetic. Rompiendo la lógica.
 
