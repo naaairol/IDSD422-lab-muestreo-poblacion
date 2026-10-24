@@ -95,7 +95,7 @@ print()
 # TODO 5: completa el resumen con el tipo de cada variable (el criterio que
 #         justifica cada clasificación va en el informe).
 clasificacion = {
-    "cliente_id": "categorica ordinal",
+    "cliente_id": "categorica nominal",
     "edad": "numerica discreta",
     "numero_hijos": "numerica discreta",
     "genero": "categorica nominal",
